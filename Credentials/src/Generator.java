@@ -60,7 +60,7 @@ public class Generator {
         String BLUE = "\u001B[34m";
 
 
-        if(type == 0) {System.out.println(RED + "USAGE: java Generator.java -l (Active Directory Priv Level) \n{Domain Admin, Domain Object Admin, Server Admin, Workstation Admin, Normal User} " + BLUE);}
+        if(type == 0) {System.out.println(RED + "USAGE: java Generator.java -l (Active Directory Priv Level; i.e. -l 'Domain Admin'; CASE SENSITIVE) \n{Domain Admin, Domain Object Admin, Server Admin, Workstation Admin, Normal User} \n Help: mlawson07@tutanota.com" + BLUE);}
         else if(type == 1) {System.out.println(RED + "ERROR: No args provided. Use java Generator.java -h for help " + BLUE);}
         else {}
 
