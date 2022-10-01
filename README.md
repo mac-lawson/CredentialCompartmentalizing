@@ -19,9 +19,11 @@ Info:
 ```
 File is located in the CredentialCompartmentalizing/Credentials/src Directory
 
+NOTE: The application is case-sensitive!!!
+
 All runs of the application will show information on usage
 
-FUN: You can customize the quote by moding CredentialCompartmentalizing/Credentials/src/Supercool.txt
+FUN: You can customize the quote by modifying CredentialCompartmentalizing/Credentials/src/Supercool.txt
 ```
 Run:
 ```
