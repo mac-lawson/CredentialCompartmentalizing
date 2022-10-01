@@ -25,6 +25,7 @@ public class Generator {
 
         String CYAN = "\u001B[36m";
 
+        System.out.println(RED + "CredentialCompartmentalizing " + BLUE + "By Mac Lawson (github.com/mac-lawson)");
 
         System.out.println(CYAN + SuperCoolQuote.nextLine() + BLUE);
         if(true) {
