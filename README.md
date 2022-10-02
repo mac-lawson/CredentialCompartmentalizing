@@ -28,6 +28,9 @@ FUN: You can customize the quote by modifying CredentialCompartmentalizing/Crede
 Run:
 ```
 java Generator.java -l (Active Directory Priv Level) \n{Domain Admin, Domain Object Admin, Server Admin, Workstation Admin, Normal User} 
+
+OPTIONS: 
+-o: Outputs password to Passcode.txt
 ```
 Help: 
 ```

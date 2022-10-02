@@ -1,5 +1,6 @@
 
 import java.io.File;
+import java.io.PrintWriter;
 import java.util.*;
 /**
 ╔═══╗     ╔╗               ╔═══╗              ╔╗                 ╔═══╗         ╔╗    
@@ -16,7 +17,7 @@ public class Generator {
     
     public static void main(String[] args) throws Exception {
         Scanner SuperCoolQuote = new Scanner(new File("Supercool.txt"));
-
+        PrintWriter write = new PrintWriter("Passcode.txt");
         String RED = "\u001B[31m";
   
 
@@ -25,20 +26,35 @@ public class Generator {
 
         String CYAN = "\u001B[36m";
 
-        System.out.println(RED + "CredentialCompartmentalizing " + BLUE + "By Mac Lawson (github.com/mac-lawson)");
+        String HIDE = "\u001B[30m";
 
-        System.out.println(CYAN + SuperCoolQuote.nextLine() + BLUE);
+        String OK = "\u001B[32m";
+        
+        String finalReturnedPasscode = "";
+
+        System.out.println("╔═══╗     ╔╗               ╔═══╗              ╔╗                 ╔═══╗         ╔╗    ");
+        System.out.println("║╔═╗║    ╔╝╚╗              ╚╗╔╗║             ╔╝╚╗                ║╔═╗║         ║║    ");
+        System.out.println("║║ ║║╔══╗╚╗╔╝╔╗╔╗╔╗╔══╗     ║║║║╔╗╔═╗╔══╗╔══╗╚╗╔╝╔══╗╔═╗╔╗ ╔╗    ║║ ╚╝╔═╗╔══╗╔═╝║╔══╗");
+        System.out.println("║╚═╝║║╔═╝ ║║ ╠╣║╚╝║║╔╗║     ║║║║╠╣║╔╝║╔╗║║╔═╝ ║║ ║╔╗║║╔╝║║ ║║    ║║ ╔╗║╔╝║╔╗║║╔╗║║══╣");
+        System.out.println("║╔═╗║║╚═╗ ║╚╗║║╚╗╔╝║║═╣    ╔╝╚╝║║║║║ ║║═╣║╚═╗ ║╚╗║╚╝║║║ ║╚═╝║    ║╚═╝║║║ ║║═╣║╚╝║╠══║");
+        System.out.println("╚╝ ╚╝╚══╝ ╚═╝╚╝ ╚╝ ╚══╝    ╚═══╝╚╝╚╝ ╚══╝╚══╝ ╚═╝╚══╝╚╝ ╚═╗╔╝    ╚═══╝╚╝ ╚══╝╚══╝╚══╝");
+        System.out.println("                                                        ╚══╝                         \n");
+
+
+        System.out.println(RED + "CredentialCompartmentalizing " + BLUE + "By Mac Lawson (https://github.com/mac-lawson)\n");
+
+        System.out.println(CYAN + SuperCoolQuote.nextLine() + BLUE +"\n\n\n");
         if(true) {
             errorCodes(0);
         }
         if(args[0].contains("-l")) {
             for(int i = 0; i < 1; i++) {
-                System.out.println(BLUE + "PASSWORD CREATED FOR ACCOUNT TIER: ");
-                if(args[1].contains("Domain Admin")) {System.out.println(BLUE + genCode(250));}
-                else if(args[1].contains("Object")) {System.out.println(BLUE + genCode(100));}
-                else if(args[1].contains("Server")) {System.out.println(BLUE + genCode(50));}
-                else if(args[1].contains("Workstation")) {System.out.println(BLUE + genCode(25));}
-                else if(args[1].contains("Normal")) {System.out.println(BLUE + genCode(10));}
+                System.out.println(BLUE + "PASSWORD CREATED FOR ACCOUNT TIER: \n");
+                if(args[1].contains("Domain Admin")) {finalReturnedPasscode = genCode(250);  System.out.println(OK + finalReturnedPasscode + "\n");}
+                else if(args[1].contains("Object")) {finalReturnedPasscode = genCode(200);  System.out.println(OK + finalReturnedPasscode+ "\n");}
+                else if(args[1].contains("Server")) {finalReturnedPasscode = genCode(150);  System.out.println(OK + finalReturnedPasscode+ "\n");}
+                else if(args[1].contains("Workstation")) {finalReturnedPasscode = genCode(75);  System.out.println(OK + finalReturnedPasscode+ "\n");}
+                else if(args[1].contains("Normal")) {finalReturnedPasscode = genCode(35);  System.out.println(OK + finalReturnedPasscode+ "\n");}
                 else {}
 
             }
@@ -47,6 +63,12 @@ public class Generator {
             errorCodes(0);
             System.out.println(BLUE);
 
+        } 
+        System.out.println(HIDE);
+
+        if(args[2].contains("-o")) {
+            write.println(finalReturnedPasscode);
+            write.close();
         }
 
     
@@ -60,8 +82,8 @@ public class Generator {
         String BLUE = "\u001B[34m";
 
 
-        if(type == 0) {System.out.println(RED + "USAGE: java Generator.java -l (Active Directory Priv Level; i.e. -l 'Domain Admin'; CASE SENSITIVE) \n{Domain Admin, Domain Object Admin, Server Admin, Workstation Admin, Normal User} \n Help: mlawson07@tutanota.com" + BLUE);}
-        else if(type == 1) {System.out.println(RED + "ERROR: No args provided. Use java Generator.java -h for help " + BLUE);}
+        if(type == 0) {System.out.println(RED + "USAGE: java Generator.java -l (Active Directory Priv Level; i.e. -l 'Domain Admin'; CASE SENSITIVE) \n{Domain Admin, Domain Object Admin, Server Admin, Workstation Admin, Normal User} \n OPTIONS: \n -o: Output to Passcode.txt \n Help: mlawson07@tutanota.com\n" + BLUE);}
+        else if(type == 1) {System.out.println(RED + "ERROR: No args provided. Use java Generator.java -h for help \n" + BLUE);}
         else {}
 
     }
